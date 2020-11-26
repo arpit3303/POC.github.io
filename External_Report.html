@@ -4,13 +4,13 @@
 <script src='External_OTS_Standards.js'></script>
 <meta name="viewport" content="width=device-width, initial-scale=1"><link href="External_OTS_Standards.css" rel="stylesheet"></head>
 </head>
-
+Test IFrame
 <script>
 
 (function(){
         let origin = location.origin || (location.protocol + '//' + location.host);
         window.onload = () => {
-            const data = JSON.stringify({name:'stdappsrequestdata', data :`SELECT SERIESNAME, CATEGORY, VALUE FROM STDTESTRDS WHERE SERIESNAME = '${params.personID}'`});
+            const data = JSON.stringify({name:'stdappsrequestdata', data :`SELECT SERIESNAME, CATEGORY, VALUE FROM STDTESTRDS`});
             window.parent.postMessage(data,'*');
         };
 })(window);
