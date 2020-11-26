@@ -16,7 +16,6 @@
 })(window);
 
 window.addEventListener('message', function(event) {
-    console.log('called in child iFrame...@@@');
     if(event && event.data) {
         let {name, data} = JSON.parse(event.data);
         if(name === 'stdappsdata') {
