@@ -10,7 +10,14 @@ Test IFrame
 (function(){
         let origin = location.origin || (location.protocol + '//' + location.host);
         window.onload = () => {
-            const data = JSON.stringify({name:'stdappsrequestdata', data :`SELECT SERIESNAME, CATEGORY, VALUE FROM STDTESTRDS`});
+            const data = JSON.stringify(
+		    
+		    {
+			    queryId:'summary', 
+			    criteria :{"parameters":{"SERIESNAME":"test"}}
+		    }
+	    
+	    );
             window.parent.postMessage(data,'*');
         };
 })(window);
