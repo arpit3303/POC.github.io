@@ -13,9 +13,11 @@ Test IFrame
             const data = JSON.stringify(
 		    
 		    {
-			    queryId:'charts', 
+			    name:'stdappsrequestdata',
+			    data: {queryId:'charts', 
 			    criteria :{"parameters":{"SERIESNAME":"test"}}
-		    }
+}
+			    		    }
 	    
 	    );
             window.parent.postMessage(data,'*');
