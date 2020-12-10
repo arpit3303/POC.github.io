@@ -1,4 +1,3 @@
-
 <html>
 <head>
 <script src='External_OTS_Standards.js'></script>
@@ -12,39 +11,6 @@ Test IFrame
         window.onload = () => {
             const data = JSON.stringify(
 		    
-		 /*   { requestArray: [   {
-			    name:'stdappsrequestdata',
-			    data: {queryId:'charts', 
-			    criteria :{
-				     "operations":"and",
-				    "parameters":{
-				    "SERIESNAME":"test",
-				    "IDENTIFIER":"level1"
-				    }}
-}
-			    		    },
-		     {
-			    name:'stdappsrequestdata',
-			    data: {queryId:'charts', 
-			    criteria :{
-				     "operations":"and",
-				    "parameters":{
-				    "SERIESNAME":"test",
-				   
-				    }}
-}
-			    		    },
-		     {
-			    name:'stdappsrequestdata',
-			    data: {queryId:'charts', 
-			    criteria :{
-				     "operations":"and",
-				    "parameters":{
-				   
-				    "IDENTIFIER":"level1"
-				    }}
-}
-			    		    }]}*/
 		    {
 			    name:'stdappsrequestdata',
 			    data: {queryId:'charts', 
@@ -56,15 +22,10 @@ Test IFrame
 				    }}
 }
 			    		    }
-		    
 	    
 	    );
-		
-		  
-		
             window.parent.postMessage(data,'*');
 		console.log("sent message to parent",data);
-		
         };
 })(window);
 
