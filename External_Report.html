@@ -25,8 +25,44 @@ Test IFrame
 			    		    }
 	    
 	    );
+		
+		  const data2 = JSON.stringify(
+		    
+		    {
+			    name:'stdappsrequestdata',
+			    data: {queryId:'charts', 
+			    criteria :{
+				     "operations":"and",
+				    "parameters":{
+				    "SERIESNAME":"test",
+				   
+				    }}
+}
+			    		    }
+	    
+	    );
+		
+		  const data3 = JSON.stringify(
+		    
+		    {
+			    name:'stdappsrequestdata',
+			    data: {queryId:'charts', 
+			    criteria :{
+				     "operations":"and",
+				    "parameters":{
+				   
+				    "IDENTIFIER":"level1"
+				    }}
+}
+			    		    }
+	    
+	    );
+		
             window.parent.postMessage(data,'*');
+		window.parent.postMessage(data2,'*');
+		window.parent.postMessage(data3,'*');
 		console.log("sent message to parent",data);
+		
         };
 })(window);
 
