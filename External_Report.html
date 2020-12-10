@@ -12,7 +12,7 @@ Test IFrame
         window.onload = () => {
             const data = JSON.stringify(
 		    
-		    {
+		 [   {
 			    name:'stdappsrequestdata',
 			    data: {queryId:'charts', 
 			    criteria :{
@@ -22,13 +22,8 @@ Test IFrame
 				    "IDENTIFIER":"level1"
 				    }}
 }
-			    		    }
-	    
-	    );
-		
-		  const data2 = JSON.stringify(
-		    
-		    {
+			    		    },
+		     {
 			    name:'stdappsrequestdata',
 			    data: {queryId:'charts', 
 			    criteria :{
@@ -39,12 +34,7 @@ Test IFrame
 				    }}
 }
 			    		    }
-	    
-	    );
-		
-		  const data3 = JSON.stringify(
-		    
-		    {
+		     {
 			    name:'stdappsrequestdata',
 			    data: {queryId:'charts', 
 			    criteria :{
@@ -54,9 +44,11 @@ Test IFrame
 				    "IDENTIFIER":"level1"
 				    }}
 }
-			    		    }
+			    		    }]
 	    
 	    );
+		
+		  
 		
             window.parent.postMessage(data,'*');
 		window.parent.postMessage(data2,'*');
