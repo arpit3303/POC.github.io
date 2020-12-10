@@ -48,6 +48,7 @@ Test IFrame
 })(window);
 
 window.addEventListener('message', function(event) {
+	console.log("Message recieved from the parent");
     if(event && event.data) {
         let {name, data} = JSON.parse(event.data);
         if(name === 'stdappsdata') {
