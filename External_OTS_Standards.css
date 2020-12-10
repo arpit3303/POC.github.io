@@ -569,7 +569,7 @@ border-top-right-radius: 0px;
 
 /*  -----------    Only Media Queries here ----------*/
 
-@media screen and (max-device-width: 450px) {
+@media screen and (max-width: 450px) {
 	.component__details > .component__main {
 		flex: 0 0 100%;
 		margin-bottom: 10px;
