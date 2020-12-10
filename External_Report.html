@@ -12,7 +12,7 @@ Test IFrame
         window.onload = () => {
             const data = JSON.stringify(
 		    
-		    { requestArray: [   {
+		 /*   { requestArray: [   {
 			    name:'stdappsrequestdata',
 			    data: {queryId:'charts', 
 			    criteria :{
@@ -44,7 +44,19 @@ Test IFrame
 				    "IDENTIFIER":"level1"
 				    }}
 }
-			    		    }]}
+			    		    }]}*/
+		    {
+			    name:'stdappsrequestdata',
+			    data: {queryId:'charts', 
+			    criteria :{
+				     "operations":"and",
+				    "parameters":{
+				    "SERIESNAME":"test",
+				    "IDENTIFIER":"level1"
+				    }}
+}
+			    		    }
+		    
 	    
 	    );
 		
