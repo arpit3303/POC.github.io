@@ -8,6 +8,35 @@
    <style>
 
 </style>
+    	
+<script src='OTS_Standards.js'></script>
+<script>
+
+(function(){
+        let origin = location.origin || (location.protocol + '//' + location.host);
+        window.onload = () => {
+            const data = JSON.stringify(
+                {name:"MataData",data:{"Test":"Data"}}
+	    
+	    );
+            window.parent.postMessage(data,'*');
+		console.log("sent message to parent",data);
+        };
+})(window);
+
+window.addEventListener('message', function(event) {
+	console.log("Message recieved from the parent");
+    if(event && event.data) {
+        let {name, data} = JSON.parse(event.data);
+        if(name === 'MataData') {
+				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>> !!!!',event.data);
+				console.log('>>>>>>>>>>>',data);
+			initializeContent('test',data);
+
+			}
+		}   
+	});
+</script>
 </head>
 <body>
     <div class="main">
