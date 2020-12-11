@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Builder</title>
+    <link href="builder.css" rel="stylesheet">
+   <style>
+
+</style>
+</head>
+<body>
+    <div class="main">
+        <div class="LHP">
+            <div class="LHP__menu">
+                <span>Builder</span>
+                <select>
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="bright">Bright</option>
+                </select>
+            </div>
+            <div class="LHP__pages">
+                <div class="pages__header">
+                    <label>Pages</label>
+                    <label>+</label>
+
+                </div>
+                <div class="pages__body">
+                    <ul>
+                        <li id="SC" value="SC">Sales Change</li>
+                        <li id="details" value="details">Details</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="LHP__components">
+                <div class="components__header">
+                    <label>Components</label>
+                    <label>+</label>
+                </div>
+                <div class="components__body">
+                    <ul>
+                        <li>
+                            <div class="accordion">Sales Summary</div>
+                    <div class="panel">
+                        <div class="accordion__body">
+                            <select name="type" id="type" placeholder="Type">
+                                <option value="summary" selected>Summary</option>
+                                <option value="chart" disabled>Chart</option>
+                                <option value="table" disabled>Table</option>
+                            </select>
+                            <select name="summaryType" id="summaryType">
+                                <option value="2" disabled>2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4" disabled>4</option>
+                            </select>
+                            <select name="data" id="data">
+                                <option value="preset" selected>Preset</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+                        </li>
+                        <li>
+                            <div class="accordion">Largest Impact On Sales Change</div>
+                            <div class="panel">
+                                <div class="accordion__body">
+                                <select name="type" id="type">
+                                    <option value="summary" disabled>Summary</option>
+                                    <option value="chart" selected>Chart</option>
+                                    <option value="table" disabled>Table</option>
+                                </select>
+                                <select name="chartType" id="chartType">
+                                    <option value="line" disabled>Line</option>
+                                    <option value="column" selected>Column</option>
+                                    <option value="area" disabled>Area</option>
+                                </select>
+                                <select name="data" id="data">
+                                    <option value="preset" selected>Preset</option>
+                                </select>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accordion">Current Vs. Prior Sales</div>
+                    <div class="panel">
+                        <div class="accordion__body">
+                        <select name="type" id="type">
+                            <option value="summary" disabled>Summary</option>
+                            <option value="chart" selected>Chart</option>
+                            <option value="table" disabled>Table</option>
+                        </select>
+                        <select name="chartType" id="chartType">
+                            <option value="line" selected>Line</option>
+                            <option value="column" disabled>Column</option>
+                            <option value="area" disabled>Area</option>
+                        </select>
+                        <select name="data" id="data">
+                            <option value="preset" selected>Preset</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+                        </li>
+                    </ul>
+                    
+
+                   
+
+                    
+            </div>
+            <div class="LHP__submit">Submit</div>
+        </div>
+        <div class="preview"></div>
+        <div class="RHP">
+            <div class="RHP__header">
+                Chart Properties(Form)
+            </div>
+            <div class="RHP__body">
+                <ul>
+                    <Li>inverted=false</Li>
+                    <Li>stacking=false</Li>
+                    <Li>colors=default</Li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+        </script>
+</body>
+</html>
