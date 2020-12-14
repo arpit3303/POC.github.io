@@ -1,0 +1,282 @@
+<html>
+<head>
+<script src='External_OTS_Standards.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link href="External_OTS_Standards.css" rel="stylesheet"></head>
+</head>
+
+<div class="report">
+<div class="component" id="summary"></div>
+<div class="component" id="chart2"></div>
+<div class="component" id="table1"></div>
+<div class="component">
+<div class="newButton"><a class='link' href="External_Report.html">Back</a></div>
+</div>
+
+
+
+</div>
+
+
+
+<script>
+
+
+
+
+let myData = [
+    {
+      "seriesname": "Change",
+      "category": "Routers",
+      "value": 950971
+    },
+      {
+      "seriesname": "Change",
+      "category": "Mouse",
+      "value": -850971
+    },
+      {
+      "seriesname": "Change",
+      "category": "Keyboard",
+      "value": 750971
+    },
+      {
+      "seriesname": "Change",
+      "category": "Cables",
+      "value": 650971
+    },
+      {
+      "seriesname": "Change",
+      "category": "WebCam",
+      "value": -550971
+    },
+	{
+      "seriesname": "Change",
+      "category": "Modem",
+      "value": 450971
+    },
+	{
+      "seriesname": "Change",
+      "category": "Speakers",
+      "value": 350971
+    },
+	{
+      "seriesname": "Change",
+      "category": "Printer",
+      "value": 250971
+    },
+    
+  ];
+
+
+
+
+let ChartData1 = myData.map(a=> {
+    let x= {};
+  x.seriesName=a.seriesname;
+  x.category = a.category;
+  x.value=a.value;
+  return x
+});
+
+
+
+
+ 
+
+let Criteria1 =
+
+  [
+
+    {
+      "seriesName":'Change' ,
+      "color": "",
+      "zIndex": 0,
+      "yAxisID": 0,
+	  "chartType":'column',
+	  "negativeColor":'#F45B5B ',
+	  "color":"#90ED7D"
+  
+    }
+
+   
+
+  ];
+let rawModel1 = {
+  "plotLineValue":'',
+  "plotLineStyle":'',
+  "chartType":'',
+  "container": 'chart2',
+  "chartTitle": 'Sales Change By Account',
+  "subtitle": '',
+  "chartData": ChartData1,
+  "legend": true,
+  "clickableLegends": false,
+  "stacking": false,
+  "stackingType": 'normal',
+  "seriesSpecifications": Criteria1,
+  "xAxisTitle": "",
+  "minThreshold":'',
+  "maxThreshold":undefined,
+  "invertedChart":true,
+  "yAxis": [{
+    "title": "Value",
+    "decimal": true,
+    "minValue": "",
+    "type": 'currency',
+    "opposite":''
+    
+  }]
+}
+
+
+
+let ChartDataT = 
+
+[{
+      "product": "Routers",
+      "currentSales": 950971,
+      "priorSales": 0,
+	  "change":950971,
+	  "perChange":10
+    },
+	{
+      "product": "Mouse",
+      "currentSales": 0,
+      "priorSales": 850971,
+	  "change":-850971,
+	  "perChange":10
+    },{
+      "product": "Keyboard",
+      "currentSales": 750971,
+      "priorSales": 0,
+	  "change":750971,
+	  "perChange":10
+    },{
+      "product": "Cables",
+      "currentSales": 650971,
+      "priorSales": 0,
+	  "change":650971,
+	  "perChange":10
+    },{
+      "product": "WebCam",
+      "currentSales": 0,
+      "priorSales": 550971,
+	  "change":-550971,
+	  "perChange":10
+    },{
+      "product": "Modem",
+      "currentSales": 450971,
+      "priorSales": 0,
+	  "change":450971,
+	  "perChange":10
+    },{
+      "product": "Speakers",
+      "currentSales": 350971,
+      "priorSales": 0,
+	  "change":350971,
+	  "perChange":10
+    },{
+      "product": "Printer",
+      "currentSales": 250971,
+      "priorSales": 0,
+	  "change":250971,
+	  "perChange":10
+    }
+	]
+
+
+let ColumnDetails = [{
+    "ID": 1,
+    "name": 'Product',
+    "field": 'product',
+    "type": '',
+	
+  },
+  {
+    "ID": 2,
+    "name": 'Current Sales',
+    "field": 'currentSales',
+    "type": 'currency'
+  },
+  {
+    "ID": 1,
+    "name": 'Prior Sales',
+    "field": 'priorSales',
+    "type": 'currency'
+  },
+   {
+    "ID": 1,
+    "name": 'Change',
+    "field": 'change',
+    "type": 'currency'
+  }, {
+    "ID": 1,
+    "name": '% Change',
+    "field": 'perChange',
+    "type": 'unit'
+  },
+  
+
+
+];
+
+let rawModelT = {
+  "container": 'table1',
+  "data": ChartDataT,
+  "columns": ColumnDetails,
+  "paginationSize":4,
+  "linkedChartContainer":'chart2'
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let config = {
+
+
+  "chart": [{
+    
+    "rawModel": rawModel1
+  }],
+
+  "table": [{
+    
+    "rawModel": rawModelT
+  }],
+	"summary" : [{"NAME":'John',"PERCHANGE":'20',"CURRENT":'120',"PRIOR":'100',"CHANGE":'20',"container":'summary'}],
+  "currencyCode": 'INR',
+
+  "unit": '%'
+};
+
+console.log(config);
+createContent(config);
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>
