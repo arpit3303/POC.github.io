@@ -16,7 +16,10 @@
         let origin = location.origin || (location.protocol + '//' + location.host);
         window.onload = () => {
             const data = JSON.stringify(
-                {name:"MataData",type:"POST",data:{"Test":"Data"}}
+                {name:"MataData",type:"POST",data:{
+ "currencyCode":"INR","chartType1":"column","chartType2":"line"
+
+}}
 	    
 	    );
             window.parent.postMessage(data,'*');
