@@ -543,6 +543,7 @@ border-top-right-radius: 0px;
 .summary__header {
   display: flex;
   justify-content: space-between;
+	margin: 0 20px;
 }
 .component__title {
   font-size:1.5rem;
