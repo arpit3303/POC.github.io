@@ -103,6 +103,7 @@
       align-self: center;
       text-align: center;
       margin: 15px;
+	  cursor:pointer;
   }
   .preview{
       width:50%;
