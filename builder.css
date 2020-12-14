@@ -118,8 +118,10 @@
 }
 .preview > .sum{ 
 	 background-image: url("sum.png");
-	 height: 5vh;
+	 height: 10vh;
 	 background-repeat: no-repeat;
+	background-size:cover;
+
   }
   .preview > .bar{ 
 	 background-image: url("bar.png");
