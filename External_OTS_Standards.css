@@ -554,6 +554,7 @@ border-top-right-radius: 0px;
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
+	margin: 0 20px;
 }
 
 .component__details > div {
