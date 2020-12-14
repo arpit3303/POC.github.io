@@ -9,7 +9,7 @@
 	
 <script src='OTS_Standards.js'></script>
 <script>
-
+let reportData;
 (function(){
         let origin = location.origin || (location.protocol + '//' + location.host);
         window.onload = () => {
@@ -47,8 +47,12 @@
 			    		    }
 	    
 	    );
+		const data1= JSON.stringify({
+name:"MataData",type:"GET",data:'9403276'
+		});
             window.parent.postMessage(data,'*');
-		console.log("sent message to parent",data);
+		window.parent.postMessage(data1,'*');
+		console.log("sent message to parent",data,data1);
         };
 })(window);
 
@@ -59,9 +63,12 @@ window.addEventListener('message', function(event) {
         if(name === 'stdappsdata') {
 				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>> !!!!',event.data);
 				console.log('>>>>>>>>>>>',data);
-			initializeContent('test',data);
+			reportData = data;
 
 			}
+	    if(name === 'metaData') {
+	    	initializeContent('test',reportData,data);
+	    }
 		}   
 	});
 </script>
