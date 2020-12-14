@@ -47,12 +47,10 @@ let reportData;
 			    		    }
 	    
 	    );
-		const data1= JSON.stringify({
-name:"MataData",type:"GET",data:'9403276'
-		});
+		
             window.parent.postMessage(data,'*');
-		window.parent.postMessage(data1,'*');
-		console.log("sent message to parent",data,data1);
+		
+		console.log("sent message to parent",data);
         };
 })(window);
 
@@ -63,7 +61,12 @@ window.addEventListener('message', function(event) {
         if(name === 'stdappsdata') {
 				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>> !!!!',event.data);
 				console.log('>>>>>>>>>>>',data);
-			reportData = data;
+		reportData = data;
+		const data1= JSON.stringify({
+name:"MataData",type:"GET",data:'9403276'
+		});
+		window.parent.postMessage(data1,'*');
+			
 
 			}
 	    if(name === 'MataData') {
