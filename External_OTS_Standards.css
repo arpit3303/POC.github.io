@@ -907,3 +907,17 @@ input:checked + .slider:before {
 .titleDiv__title{
 flex-grow:1;
 }
+
+.newButton {
+	cursor: pointer;
+	 width: 20vw;
+    margin-left: auto;
+    color: white;
+    background-color: #5799C0;
+    padding: 10px;
+}
+
+.newButton a {
+	text-decoration:none;
+	color:white !important;
+}
