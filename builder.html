@@ -9,7 +9,6 @@
 
 </style>
     	
-<script src='OTS_Standards.js'></script>
 <script>
 
 (function(){
@@ -22,7 +21,7 @@
 }}
 	    
 	    );
-            window.parent.postMessage(data,'*');
+           // window.parent.postMessage(data,'*');
 		console.log("sent message to parent",data);
         };
 })(window);
@@ -34,7 +33,7 @@ window.addEventListener('message', function(event) {
         if(name === 'MataData') {
 				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>> !!!!',event.data);
 				console.log('>>>>>>>>>>>',data);
-			initializeContent('test',data);
+	
 
 			}
 		}   
@@ -51,6 +50,12 @@ window.addEventListener('message', function(event) {
                     <option value="dark">Dark</option>
                     <option value="bright">Bright</option>
                 </select>
+					
+         
+				<Select id="currency">
+				<option value="INR" selected>INR</option>
+                    <option value="USD">USD</option>
+				</Select>
             </div>
             <div class="LHP__pages">
                 <div class="pages__header">
@@ -102,8 +107,8 @@ window.addEventListener('message', function(event) {
                                     <option value="chart" selected>Chart</option>
                                     <option value="table" disabled>Table</option>
                                 </select>
-                                <select name="chartType" id="chartType">
-                                    <option value="line" disabled>Line</option>
+                                <select name="chartType" id="chartType1">
+                                    <option value="line" >Line</option>
                                     <option value="column" selected>Column</option>
                                     <option value="area" disabled>Area</option>
                                 </select>
@@ -122,9 +127,9 @@ window.addEventListener('message', function(event) {
                             <option value="chart" selected>Chart</option>
                             <option value="table" disabled>Table</option>
                         </select>
-                        <select name="chartType" id="chartType">
+                        <select name="chartType" id="chartType2">
                             <option value="line" selected>Line</option>
-                            <option value="column" disabled>Column</option>
+                            <option value="column" >Column</option>
                             <option value="area" disabled>Area</option>
                         </select>
                         <select name="data" id="data">
@@ -141,9 +146,13 @@ window.addEventListener('message', function(event) {
 
                     
             </div>
-            <div class="LHP__submit">Submit</div>
+            <div class="LHP__submit" id="add">Add</div>
         </div>
-        <div class="preview"></div>
+        <div class="preview">
+		<div class="sum"></div>
+		<div class="bar"></div>
+		<div class="line"></div>
+		</div>
         <div class="RHP">
             <div class="RHP__header">
                 Chart Properties(Form)
@@ -160,6 +169,7 @@ window.addEventListener('message', function(event) {
 
 
     <script>
+		
         var acc = document.getElementsByClassName("accordion");
         var i;
         
@@ -174,6 +184,27 @@ window.addEventListener('message', function(event) {
             }
           });
         }
+		const formJson = ()=>{
+		let currencyCode = document.querySelector('#currency').value;
+		let chart1 = document.querySelector('#chartType1').value;
+		let chart2 = document.querySelector('#chartType2').value;
+		
+		return {
+		"currencyCode" : currencyCode,
+		"chartType1" : chart1,
+		"chartType2" : chart2
+		}
+		
+		}
+		const postMatadata = ()=>{
+		let data =  JSON.stringify(formJson());
+		 
+		    window.parent.postMessage(data,'*');
+		console.log("sent message to parent",data);
+		 
+		 
+		}
+		document.querySelector('#add').addEventListener('click',postMatadata);
         </script>
 </body>
 </html>

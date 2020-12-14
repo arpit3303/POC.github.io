@@ -106,6 +106,28 @@
   }
   .preview{
       width:50%;
+	  background-image: url("back.png");
+	  background-position: center;
+    background-size: cover;
+}
+.preview div {
+	background-position: center;
+    background-size: contain;
+	weight: 60%;
+	margin: 10px 20px;
+}
+.preview > .sum{ 
+	 background-image: url("sum.png");
+	 height: 5vh;
+	 background-repeat: no-repeat;
+  }
+  .preview > .bar{ 
+	 background-image: url("bar.png");
+	height: 30vh;
+  }
+  .preview > .line{ 
+	 background-image: url("line.png");
+	 height:30vh;
   }
   .RHP{
       width:20%;
